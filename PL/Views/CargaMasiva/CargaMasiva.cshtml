@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "CargaMasiva";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Carga masiva</h2>
+<hr />
+<style>
+    .centrar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<div class="centrar">
+    @using (Html.BeginForm("CargaMasiva", "CargaMasiva", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input value="CSV" class="form-control" type="file" name="Archivo" /><br /><br />
+        <button class="btn btn-success" type="submit">Cargar</button>
+    }
+</div>
